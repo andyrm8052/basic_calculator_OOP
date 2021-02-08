@@ -44,7 +44,8 @@ test('Calculator adding to calculations', () => {
     let calculations = Calculator.Calculation;
 
     calculations.forEach(function(calculation){
-        console.log(calculation.GetResults());
+        //console.log(calculation.GetResults());
+        console.log(calculation);
     });
     expect(result).toBe(0.5);
 });
