@@ -8,25 +8,25 @@ class Calculator {
     static Calculation = [];
     static Sum(a,b){
         let calculation = new  Calculation(a,b,Sum);
-        this.Calculation.push(Calculation);
+        Calculator.Calculation.push(calculation);
         return calculation.GetResults();
     }
 
     static Difference(a,b){
         let calculation = new  Calculation(a,b,Difference);
-        this.Calculation.push(Calculation);
+        Calculator.Calculation.push(calculation);
         return calculation.GetResults();
     }
 
     static Product(a,b){
         let calculation = new  Calculation(a,b,Product);
-        this.Calculation.push(Calculation);
+        Calculator.Calculation.push(calculation);
         return calculation.GetResults();
     }
 
     static Quotient(a,b){
         let calculation = new  Calculation(a,b,Quotient);
-        this.Calculation.push(Calculation);
+        Calculator.Calculation.push(calculation);
         return calculation.GetResults();
     }
 }
