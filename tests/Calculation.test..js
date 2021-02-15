@@ -3,6 +3,8 @@ const Sum = require('../src/Operations/Sum');
 const Difference = require('../src/Operations/Difference');
 const Product = require('../src/Operations/Product');
 const Quotient = require('../src/Operations/Quotient');
+const Square = require('../src/Operations/Square');
+const SquareRoot = require('../src/Operations/SquareRoot');
 
 test('Test of Calculation Instantiation', () => {
     let op = Sum;
@@ -35,4 +37,16 @@ test('Test Get results for Quotient function', () => {
     let op = Quotient;
     let calculation = new Calculation(1,2,op);
     expect(calculation.GetResults()).toBe(0.5);
+});
+
+test('Test Get results for Square function', () => {
+    let op = Square;
+    let calculation = new Calculation(2,op);
+    expect(calculation.GetResults()).toBe(4);
+});
+
+test('Test Get results for Square function', () => {
+    let op = SquareRoot;
+    let calculation = new Calculation(9,op);
+    expect(calculation.GetResults()).toBe(9);
 });
