@@ -1,5 +1,5 @@
-function SquareRoot(a){
-    return (a * a) / a;
+function SquareRoot(a,b){
+    return a ** b;
 };
 
 module.exports = SquareRoot;

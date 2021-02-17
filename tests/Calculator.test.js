@@ -23,12 +23,12 @@ test('Calculator dividing two numbers', () => {
 });
 
 test('Calculator square of a number', () => {
-    let result = Calculator.Square(2,"Square");
+    let result = Calculator.Square(2,2,"Square");
     expect(result).toBe(4);
 });
 
 test('Calculator square of a number', () => {
-    let result = Calculator.SquareRoot(9,"SquareRoot");
+    let result = Calculator.SquareRoot(81,0.5,"SquareRoot");
     expect(result).toBe(9);
 });
 

@@ -41,12 +41,12 @@ test('Test Get results for Quotient function', () => {
 
 test('Test Get results for Square function', () => {
     let op = Square;
-    let calculation = new Calculation(2,op);
+    let calculation = new Calculation(2,2,op);
     expect(calculation.GetResults()).toBe(4);
 });
 
 test('Test Get results for Square function', () => {
     let op = SquareRoot;
-    let calculation = new Calculation(9,op);
+    let calculation = new Calculation(81,0.5,op);
     expect(calculation.GetResults()).toBe(9);
 });
