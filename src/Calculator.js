@@ -8,14 +8,20 @@ const SquareRoot = require('./Operations/SquareRoot');
 
 class Calculator {
     static Calculation = [];
-    static addCalculation(Calculation){
-        Calculator.Calculation.push(Calculation);
+
+    static addCalculation(calculation){
+        Calculator.Calculation.push(calculation);
+    }
+
+    static getLastCalculation(){
+        return this.Calculation[this.Calculation.length-1];
     }
 
     static Sum(a,b){
+        //Factory Method
         //let calculation = new  Calculation(a,b,Sum);
         let calculation = Calculation.Create(a,b,Sum);
-       // Calculator.Calculation.push(Calculation.Create(a,b,Sum));
+        //Calculator.Calculation.push(Calculation.Create(a,b,Sum));
         this.addCalculation(calculation);
         return calculation.GetResults();
     }

@@ -41,3 +41,9 @@ test('Calculator adding to calculations', () => {
     });
     expect(result).toBe(0.5);
 });
+
+test('Calculator Get Last Calculation', () => {
+    Calculator.Product(1,2,"Product");
+    let result = Calculator.getLastCalculation();
+    expect(result).toBe(2);
+});
