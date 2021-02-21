@@ -4,6 +4,10 @@ class Calculation{
         this.b = b;
         this.op = op;
     }
+    static Create(a,b,op){
+        return new Calculation(a,b,op);  //SOLID
+    }
+
     GetResults(){
         return this.op(this.a,this.b);
     }
