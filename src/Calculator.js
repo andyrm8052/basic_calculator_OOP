@@ -9,6 +9,10 @@ const SquareRoot = require('./Operations/SquareRoot');
 class Calculator {
     static Calculation = [];
 
+    static Calculator(a,b,op){
+        this.Calculation.push((a,b,op));
+    }
+
     static addCalculation(calculation){
         Calculator.Calculation.push(calculation);
     }
@@ -23,37 +27,37 @@ class Calculator {
         let calculation = Calculation.Create(a,b,Sum);
         //Calculator.Calculation.push(Calculation.Create(a,b,Sum));
         this.addCalculation(calculation);
-        return calculation.GetResults();
+        return calculation;
     }
 
     static Difference(a,b){
         let calculation = Calculation.Create(a,b,Difference);
         this.addCalculation(calculation);
-        return calculation.GetResults();
+        return calculation;
     }
 
     static Product(a,b){
         let calculation = Calculation.Create(a,b,Product);
         this.addCalculation(calculation);
-        return calculation.GetResults();
+        return calculation;
     }
 
     static Quotient(a,b){
         let calculation = Calculation.Create(a,b,Quotient);
         this.addCalculation(calculation);
-        return calculation.GetResults();
+        return calculation;
     }
 
     static Square(a,b){
         let calculation = Calculation.Create(a,b,Square);
         this.addCalculation(calculation);
-        return calculation.GetResults();
+        return calculation;
     }
 
     static SquareRoot(a,b){
         let calculation = Calculation.Create(a,b,SquareRoot);
         this.addCalculation(calculation);
-        return calculation.GetResults();
+        return calculation;
     }
 
 }
