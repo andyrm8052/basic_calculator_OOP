@@ -3,6 +3,81 @@
 ### Coveralls
 [![Coverage Status](https://coveralls.io/repos/github/andyrm8052/basic_calculator_OOP/badge.svg?branch=main)](https://coveralls.io/github/andyrm8052/basic_calculator_OOP?branch=main)
 
+OOP Design Patterns
+<i>In this homework I will show one pattern from each Structural,
+Behavioral and Creational Category Pattern.</i>
+
+## Creational Pattern
+### Prototype
+Prototype is a creational design pattern that lets you copy 
+existing objects without making your code dependent on their 
+classes.
+
+For example, we could implement and extend a certain class or
+constructor so that we can clone its codes:
+```
+In my case adding abstract and implements to the class return
+an error. Instead I left it the way it is and extended the class
+I want to clone from the Calculator.js
+
+public abstract class Calculation implements Clone{
+    constructor(a, b, op){
+        this.a = a;
+        this.b = b;
+        this.op = op;
+    }
+
+```
+then using concrete class from Calculator.js to extend it to Calculation
+```
+class Calculator extends Calculation{
+       static Sum(a,b){
+           let calculation = new Calculation();
+           this.addCalculation(calculation);
+           return calculation;
+       }
+    //more codes
+```
+
+## Structural Pattern
+### Flyweight
+Flyweight is a structural design pattern that lets you fit 
+more objects into the available amount of RAM by sharing 
+common parts of state between multiple objects instead of 
+keeping all of the data in each object.
+```
+In Calculator.js
+```
+## Behavioral Pattern
+### Strategy
+Strategy is a behavioral design pattern that lets you define 
+a family of algorithms, put each of them into a separate 
+lass, and make their objects interchangeable.
+
+In this case, strategy could use multiple operation classes to execute.
+For my example, I'll only use one operation, which is Sum.
+
+By creating an interface Strategy to be implemented in the sum class.
+```
+Calculation.js
+interface Strategy{
+    public int operation(int a, int b);
+}
+
+Calculator.js
+class add implements Strategy{
+    public int operation(int a, int b){
+        return a + b;
+    }
+}
+
+```
+This pattern does the opposite of what our original codes do.
+For example, we created multiple constructor for different operations
+inside a single class. For strategy, we try to make multiple
+classes independently for the codes to be interchangeable. 
+
+-----------------------------------------------------------------
 ###OOP Tutorial
 <i>I will explain the concept of OOP using S.O.L.I.D.</i>
 <br>

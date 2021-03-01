@@ -49,3 +49,17 @@ test('Test Get results for Square function', () => {
     let calculation = new Calculation(81,0.5,op);
     expect(calculation.GetResults()).toBe(9);
 });
+
+//Structural Pattern - Flyweight
+test( 'Test Get results for Sum using Flyweight', () =>{
+   let op = Sum;
+   let Calculate = new Calculation(1, 2, op);
+    expect(CalculationObject.GetResults()).toBe(3);
+});
+
+//Behavioral Pattern - Strategy
+test('Test Ger Results for Sum using Strategy', () =>{
+   let Strategy = new Calculation(1, 2, Sum);
+   expect(CalculationObject.GetResults()).toBe(3);
+   return Strategy.operation(1, 2);
+});

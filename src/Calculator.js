@@ -6,7 +6,7 @@ const Quotient = require('./Operations/Quotient');
 const Square = require('./Operations/Square');
 const SquareRoot = require('./Operations/SquareRoot');
 
-class Calculator {
+class Calculator extends Calculation{
     static Calculation = [];
 
     static Calculator(a,b,op){
@@ -22,10 +22,7 @@ class Calculator {
     }
 
     static Sum(a,b){
-        //Factory Method
-        //let calculation = new  Calculation(a,b,Sum);
-        let calculation = Calculation.Create(a,b,Sum);
-        //Calculator.Calculation.push(Calculation.Create(a,b,Sum));
+        let calculation = new Calculation();  //extends this to the class Calculation to get the constructor
         this.addCalculation(calculation);
         return calculation;
     }
@@ -60,6 +57,32 @@ class Calculator {
         return calculation;
     }
 
+}
+
+//Flyweight Pattern
+class sum implements Calculate{
+    private int x;
+    private int y;
+    public void left(x){
+        this.x = x;
+    }
+
+    public void right(y){
+        this.y = y;
+    }
+
+    public void result(){
+        let calculation = Calculation.Create(x,y,Sum);
+        this.Calculate(calculation);
+        return calculation;
+    }
+}
+
+//Strategy Pattern
+class add implements Strategy{
+    public int operation(int a, int b){
+        return a + b;
+    }
 }
 
 module.exports = Calculator;

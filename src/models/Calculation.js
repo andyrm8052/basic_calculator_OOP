@@ -14,4 +14,9 @@ class Calculation{
 
 }
 
+//Strategy Pattern
+interface Strategy{
+    public int operation(int a, int b);
+}
+
 module.exports = Calculation;
