@@ -49,7 +49,7 @@ keeping all of the data in each object.
 Flyweight basically reuses existent codes to store and create new ones.
 IT allows to reduce the number of codes as well.
 ```
-In Calculator.js
+
 ```
 ## Behavioral Pattern
 ### Strategy
