@@ -10,6 +10,8 @@ Prototype is a creational design pattern that lets you copy
 existing objects without making your code dependent on their 
 classes.
 
+In order for this to work we must create an abstract class that can implements the cloning part of the codes.
+
 For example, we could implement and extend a certain class or
 constructor so that we can clone its codes:
 ```
@@ -25,13 +27,14 @@ public abstract class Calculation implements Clone{
     }
 
 ```
-then using concrete class from Calculator.js to extend it to Calculation
+then using concrete class from Calculator.js to extend it to Calculation and using GetResults as the clone()
+For example, GetResults would work similar to clone since we are taking the line of codes from GetResults into another class.
 ```
 class Calculator extends Calculation{
        static Sum(a,b){
            let calculation = new Calculation();
            this.addCalculation(calculation);
-           return calculation;
+           return calculation.GetResults();
        }
     //more codes
 ```
@@ -42,6 +45,9 @@ Flyweight is a structural design pattern that lets you fit
 more objects into the available amount of RAM by sharing 
 common parts of state between multiple objects instead of 
 keeping all of the data in each object.
+
+Flyweight basically reuses existent codes to store and create new ones.
+IT allows to reduce the number of codes as well.
 ```
 In Calculator.js
 ```
@@ -73,6 +79,11 @@ This pattern does the opposite of what our original codes do.
 For example, we created multiple constructor for different operations
 inside a single class. For strategy, we try to make multiple
 classes independently for the codes to be interchangeable. 
+
+So, basically Strategy will take a class with many constructor or lines of codes
+and allows it to extract them into separate classes. In my case for example,
+all of our operations are implemented inside of one class. It we would have done it
+the strategy way then each operation would be in separated calculator classes.
 
 -----------------------------------------------------------------
 ###OOP Tutorial
