@@ -22,7 +22,7 @@ class Calculator extends Calculation{
     }
 
     static Sum(a,b){
-        let calculation = new Calculation();  //extends this to the class Calculation to get the constructor
+        let calculation = new Calculation(a,b,Sum);  //extends this to the class Calculation to get the constructor
         this.addCalculation(calculation);
         return calculation;
     }
@@ -51,38 +51,40 @@ class Calculator extends Calculation{
         return calculation;
     }
 
-    static SquareRoot(a,b){
+    //static SquareRoot(a,b){
+    //    let calculation = Calculation.Create(a,b,SquareRoot);
+    //    this.addCalculation(calculation);
+    //    return calculation;
+    //}
+
+}
+
+//Singleton Pattern
+let Singleton = (function () {
+    let instance;
+
+    function SquareRoot(a,b) {
         let calculation = Calculation.Create(a,b,SquareRoot);
-        this.addCalculation(calculation);
         return calculation;
     }
 
-}
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = Sum();
+            }
+            return instance;
+        }
+    };
+})();
 
-//Flyweight Pattern
-class sum implements Calculate{
-    private int x;
-    private int y;
-    public void left(x){
-        this.x = x;
-    }
+function run() {
 
-    public void right(y){
-        this.y = y;
-    }
+    let instance1 = Singleton.getInstance();
+    let instance2 = Singleton.getInstance();
 
-    public void result(){
-        let calculation = Calculation.Create(x,y,Sum);
-        this.Calculate(calculation);
-        return calculation;
-    }
-}
-
-//Strategy Pattern
-class add implements Strategy{
-    public int operation(int a, int b){
-        return a + b;
-    }
+    //Checks whether the function Sum and SquareRoot are the same. If they are it equals to true
+    alert("Same instance? " + (instance1 === instance2));
 }
 
 module.exports = Calculator;

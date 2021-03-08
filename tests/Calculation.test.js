@@ -50,6 +50,7 @@ test('Test Get results for Square function', () => {
     expect(calculation.GetResults()).toBe(9);
 });
 
+/*
 //Structural Pattern - Flyweight
 test( 'Test Get results for Sum using Flyweight', () =>{
    let op = Sum;
@@ -63,3 +64,4 @@ test('Test Ger Results for Sum using Strategy', () =>{
    expect(CalculationObject.GetResults()).toBe(3);
    return Strategy.operation(1, 2);
 });
+ */
